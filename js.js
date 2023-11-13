@@ -1,13 +1,18 @@
-// let a = +document.getElementById('c').value;
 
-function changeCtoF() {
-    let a = +document.getElementById('c').value;
-    let y = a * 9/5 + 32;
-    document.getElementById('result').innerHTML = 'result :' + y + ' độ C';
-}
+function changeTemperature() {
+    let a = +document.getElementById("Temperature").value;
+    let FromC = document.getElementById("From").value;
+    let to = document.getElementById("To").value;
+    let result;
 
-function changeFtoC() {
-    let a = +document.getElementById('c').value;
-    let z = a * 5/9 - 32;
-    document.getElementById('result').innerHTML ='result :' + z + ' độ F';
+    if (FromC === "Fahrenheit" && to === "Celsius"){
+        result = "result : " + (a * 5/9 - 32) + " C ";
+    } else if (FromC === "Celsius" && to === "Fahrenheit") {
+        result = "result : " + (a * 9/5 + 32) + " F ";
+    } else if (to === "Fahrenheit"){
+        result = "result : " + a + " F ";
+    } else {
+        result = "result : " + a + " C ";
+    }
+    document.getElementById("result").innerHTML = result;
 }
